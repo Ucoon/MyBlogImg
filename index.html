@@ -1,0 +1,235 @@
+<html style="font-size: 342.5%;">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+    />
+    <meta name="format-detection" content="telephone=no,address=no,email=no" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="mobileOptimized" content="width" />
+    <meta name="handleldFriendly" content="true" />
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="baidu-site-verification" content="hYTVm6Tx2o" />
+    <meta name="keywords" content="微红包" />
+    <meta name="description" content="微红包-年轻人的社交平台" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>微红包 - 年轻人的社交娱乐平台 App</title>
+    <link rel="shortcut icon" href="./assests/images/favicon.png" />
+    <link href="./assests/css/index.ed80d75f.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+  </head>
+  <body style="height: 3292px;">
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script type="text/javascript">
+      window.isResponsive = null
+    </script>
+    <script type="text/javascript">
+
+      function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    var isWeixin = is_weixin();
+    var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
+    function loadHtml(){
+      var div = document.createElement('div');
+      div.id = 'weixin-tip';
+      div.innerHTML = '<p><img src="./assests/images/live_weixin.png" alt="微信打开"/></p>';
+      document.body.appendChild(div);
+    }
+    
+    function loadStyleText(cssText) {
+          var style = document.createElement('style');
+          style.rel = 'stylesheet';
+          style.type = 'text/css';
+          try {
+              style.appendChild(document.createTextNode(cssText));
+          } catch (e) {
+              style.styleSheet.cssText = cssText; //ie9以下
+          }
+            var head=document.getElementsByTagName("head")[0]; //head标签之间加上style样式
+            head.appendChild(style); 
+      }
+      var cssText = "#weixin-tip{position: fixed; left:0; top:0; background: rgba(0,0,0,0.8); filter:alpha(opacity=80); width: 100%; height:100%; z-index: 100;} #weixin-tip p{text-align: center; margin-top: 10%; padding:0 5%;}";
+    if(isWeixin){
+      loadHtml();
+      loadStyleText(cssText);
+    }
+
+      function setRootPixel() {
+        var defaultFontSize = 0
+
+        function getDefaultFontSize() {
+          if (defaultFontSize) {
+            return defaultFontSize
+          }
+
+          document.documentElement.style.fontSize = ''
+          var temp = document.createElement('div')
+          temp.style.cssText = 'width:1rem;display:none'
+          document.head.appendChild(temp)
+          defaultFontSize =
+            +window
+              .getComputedStyle(temp, null)
+              .getPropertyValue('width')
+              .replace('px', '') || 16
+          document.head.removeChild(temp)
+
+          return defaultFontSize
+        }
+
+        function getQuery(name) {
+          return (new RegExp('[?&]' + name + '=([^&#\\b]+)').exec(
+            location.search || ''
+          ) || [])[1]
+        }
+
+        function setRootFontSize() {
+          var widthQueryKey = ''
+          var rem2px = 50
+          var clientWidth
+          if (widthQueryKey && +getQuery(widthQueryKey)) {
+            clientWidth = +getQuery(widthQueryKey)
+          } else {
+            clientWidth =
+              window.innerWidth ||
+              document.documentElement.clientWidth ||
+              (document.body && document.body.clientWidth) ||
+              375
+          }
+
+          var htmlFontSizePx = (clientWidth / 375) * rem2px
+
+          /* 兼容移动端页面在pc站上的显示，
+         media query后固定body的宽度，这时候以浏览器宽度来计算html的font-size就会使页面样式错乱
+       */
+          htmlFontSizePx = Math.min(htmlFontSizePx, 64)
+
+          window.ROOT_FONT_SIZE = htmlFontSizePx
+          document.documentElement.style.fontSize =
+            (htmlFontSizePx / getDefaultFontSize()) * 100 + '%'
+        }
+
+        function adjust(immediate) {
+          if (immediate) {
+            setRootFontSize()
+            return
+          }
+
+          setTimeout(setRootFontSize, 30)
+        }
+
+        if (window.isResponsive === false) {
+          document.documentElement.style.fontSize = '50px'
+          return
+        }
+
+        adjust(true)
+
+        window.addEventListener('resize', adjust, false)
+
+        if ('onorientationchange' in window) {
+          window.addEventListener('orientationchange', adjust, false)
+        }
+      }
+
+      typeof window !== 'undefined' && setRootPixel()
+    </script>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="page-container first-container">
+            <img
+              class="gif"
+              src="./assests/images/bg.5b0b3dc4.gif"
+              width="375px"
+              alt=""
+            />
+            <div class="bg">
+              <div>
+                <img src="./assests/images/logo.png" />
+                <button id='download'>
+                  下载微红包
+                </button>
+              </div>
+            </div>
+            <img
+              class="arrow"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAATCAMAAABSrFY3AAAAh1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9qkf8RAAAALHRSTlMAZhQEQDYiEGBdOy8J+O6ZTc5qU1AqJhrm4dTHwVoH57u1sKOPjYyDc1dKDE/hPsIAAADHSURBVBjTZVHnGoMwCMwwrrhqa9U6ujfv/3wF/Yw13h+OAw7yhUntsjVcRzDF+U5YupdxvsUKwon+9D4kKWNyiH5hCvvA9NIsTpeDLnbIZ393aoscIsF+tpZqsAx9CmG/POfDR2Ri/YTOMmKqnCy1o+XU5nssh/juWePRM4aWpQBQBYvCtkbtwNwNIBpt9OIEVFBI84RoOt70fcSYJK9xoUiBMo60q4heS+OgGxI273YI4WKrf4QRSS7tP7nFZp2N4lxf1Jz+AN4+EFrsN7+jAAAAAElFTkSuQmCC"
+            />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="page-container">
+            <p class="text">找到小伙伴<br>随时分享生活乐趣</p>
+            <button id='download' style="box-shadow: rgb(218, 92, 24) 0px 15px 20px -10px;">下载微红包</button>
+            <div class="picture">
+            <img src="./assests/images/group_.57f09b0d.png" >
+            <img class="wave" 
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAHnCAMAAABg5OYCAAAAY1BMVEUAAACdQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgadQgZOTkpdAAAAIXRSTlMABgobDhMpNyAXJUcuPTNcVkFvUJV8apBlm4KHdYtLn2FeE3oRAAAED0lEQVRo3s2a23LjIAyGDRgMjo85N4nTvP9T7sUuEjP9sx4tOLO68lDXQuj0obb6LV3489CeXRWlO5n4dGlo1Vp+rOSioqIp/nZdVSY+776ielNVOr6rvar+Wdpexe3OvOHxGG1rvmdaNV18tx5qqSLv6Fw6Rdbulzra9u3im9VAm/K7+HMtt602dKyGj2i6xOXhq6fVZoqKzOilirQmRcm5vB5xuV9a8tvhpaP6vaFIKSS7ffyUe3S0+jyFGKn3Idk1P8kVTTp+8hooUq+naP585EityTwVMmzrnlFlOBgUqYk3bUumObFxjs4oNBpE6vObbcPvSiXdb6thFvZvzkEm2Bep3y4cqbtJAR8LBMQZisnbsBK/WYLzDeemRluVy5DWElR3jv2bGiUUrpMmqZP7O6qpvkX1VyxmoB7QWBypb3qLUIKpQH8732rQC/sn6ptiUTXq3Yc76vP9Nb7sz06sSPEjr05nHQ/x5OMpvFmt0Bfk0r+QFWzxkFis6wyyaXY/PaSxN8nzm5NND6NaTjYtJTNnFsxCAzK2JNksXGE+RTb3/4VsuIvkJQd3PfdKyUZzhyxNNm4HyeaCyCbkkE3bIVrBkeoGVZhsnIa2bUw2eoVsTHmyoUjdlmyelG8dJps7IhtVZ5GNRmSzFCebboVs0n6R3izlkYpvt/B+gclGnPl2jWyOnyKbG1XPJSUbG1VuSTYWkw3+glwaJptrm5BNACynk5mNyiCbQ0o2GngzeEqONsM431D09RbXVMzr4pRgsnFENjgLN57ZLIhImWy8nGwULN7jnqrnjWJyW7KZz5RvD4fJBm5aruiAyAbf/W0gPaYI2dgdIpshJRunSpMNjlRH6WN6HVXmkI1qNbrlQ7IxcrLRNSmynyIbheJs9yCGOQ1wtSvD4M+RyOa8OrOpy5DNgTw0YbJpuEZ5Uum1mGw4+uY1smmZbIYiZKO7VbKZOWOLkY3+K9m4QmRTQ7K5s99mJpu9KzRdvBLDPJhsuIs0N0g2ujjZTEQ2AyQbFTLIxh/sSqQaQDYqh2zqfm1m45vyZAPnUc2MzkEsOrAvVslmJB+/2gwGXyWbNH63JJu9w7kJ8ziHbEauJfhGZe2GZIMjNThQf+VkY4e1mQ3uLWLB/W3EZAP6ZjmyWRKyQUyQRTZKQjbDhmSDLQanU5JsoDetZ6YtQzbg76YFyQZnFs5CN6cZKxR8H8Jkk1ajwDUt+4KKZza40ubLtEI2/QZkMwKyAQyeSza4o8OaismmKkU2L/B/NuBdiWASY9s+TzbsN+zj7cnGf5xslqb4zGYMmGyKz2zmD5GNRz0A9gtfdU1VgmwsIBswOQV9c8OZDWaCbMHTmfJkw8kJrVDAYpIVslnZju4t8pD/4U0gvwCD1kM+iOuOQwAAAABJRU5ErkJggg==" 
+            />
+            </div>
+            <img class="sm-logo" 
+            src="./assests/images/logo.png" 
+            />
+           <img class="arrow" 
+           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAATCAMAAABSrFY3AAAAh1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9qkf8RAAAALHRSTlMAZhQEQDYiEGBdOy8J+O6ZTc5qU1AqJhrm4dTHwVoH57u1sKOPjYyDc1dKDE/hPsIAAADHSURBVBjTZVHnGoMwCMwwrrhqa9U6ujfv/3wF/Yw13h+OAw7yhUntsjVcRzDF+U5YupdxvsUKwon+9D4kKWNyiH5hCvvA9NIsTpeDLnbIZ393aoscIsF+tpZqsAx9CmG/POfDR2Ri/YTOMmKqnCy1o+XU5nssh/juWePRM4aWpQBQBYvCtkbtwNwNIBpt9OIEVFBI84RoOt70fcSYJK9xoUiBMo60q4heS+OgGxI273YI4WKrf4QRSS7tP7nFZp2N4lxf1Jz+AN4+EFrsN7+jAAAAAElFTkSuQmCC"
+            />
+          </div>
+        </div>
+      <div class="swiper-slide">
+          <div class="page-container page">
+            <p class="text">语音带文字<br>告别打字聊天更快</p>
+            <button id='download' style="box-shadow: rgb(28, 167, 74) 0px 15px 15px -10px;">下载微红包</button>
+            <div class="picture">
+              <img src="./assests/images/chat_.12789cbf.png" />
+              <img class="wave" 
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAHnCAMAAABg5OYCAAAAY1BMVEUAAAAEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeysEeyuQAnQ5AAAAIXRSTlMABgocFA43KSUYLj0gM0dcQVZvUJWHfGqQm4JhdWVLn4sqRf4jAAAEDElEQVRo3t2aaW/bMAyGLdm6fMXO3ThJ/f9/5QasIjXsDTRVSgKUnwzVNUXxesS2+iOt+3qwJ1N5aY+1fzprWm0afqzSRXhFs/9tVVW1fx4/vPrfqqV/V/ai+rbYTvjtTrzhzd7bpj8nWq1b/64aVKqi3tC5tIKs3R6Ut+2TbRtoU/Xofy7TbVM1HWst2LazXx4+OlrVs/IqN32qIilJkeLV5eqXu4P9enLVbpFe/bamSCkk49Z/ylxbWr0f/Wp7GIJd81O6oln6Ty6OIvV29OZPe0veVGSeyDG0vXuVblejSA282VgyzSYbZ+iMnJYcqavyxxlEKn43QcB+YRZ2D84hTUJfOFoM/XZmv42z8Cpv7OMEAXGGYvIyROI3S3C+4dyUaKvpMsBaMnPd2XcPalSi4DqJa2ptUf1NlnqgHqAbHKm4tySnRF2B/na6KNALuzvqm8kiFOrd88GBPt/d/Mv9ySQrEvwYKDpJf4jHnvaBVyv0hXTpFrbCAouHwGKpMshGj/96SD7wpqur15BNB6M6OXA4s9R7yWZeucL8NLKZqDPYaxvpIlnJMVHXM3+RjQQdEnbTdDEjJJtzhGyMTE6Jlj6jZSRSzSAKk42R0LbyZMNBF/oNk83yRLIxzyWb+0IMnkA2QmWRjURksxYnm/YB2aB+Ed4s0yMV327h/QKTjStONnv7GrLZXYhs1pBsqNK+g2xEGbLRTDY3yxZDlpPBzEZkkM0uJBtJ3gzIhnJG2Qzjek3R1zW4pmJezyAbA8nmozzZOEg2kEj1JoNsBCzemy1Vz0v/IrI5MdkYTDZw0+mKdohs8N2fx5iyziGbSfrjGl1kAtcYUZpscKQaSh/XSa8yh2yElci2UmQjVYxsys9sBIqz8UoMcxzgaluGwe8bIpsTJJs1IBtVhmx2RDYzJhuNyKaXyWRD0VdPMbKxTDZDBtk4IhvZRskGZGw22VCk7uHMZlOGbBQkmwP7bWKy2ZqqiMw3YpgrRyp3Ec1dJCQbWZxscIdkshHfIJtJeEW7JhKpiGxEDtmoLjaz6XV5soHzKHwOqRL6wv0/2fSLzWDwONnA+C1PNluDcxPmcQ7ZcC0JblTTHpJN3swGkg2MVGdQ/U0nmyE2s8G9JVlUz/0tSjZB3yxENguTzRqQDWKCLLIRKWQzPJFsoMUOnE4+2cQYnD1vy5AN+LtpSbIxEbL5LEU2Dt2H8C0fV6OqzAUVz2ym08vJpnsC2Wwg2ayOGRx201Jkg/9uimY2pchmAf9nA95NELhf7hfPJxt4d3oD2cxvJZtVwzwuRzag7sAalS52ehHZ9LAH4H7R6qoE2TSAbMDkFPTNJ85sMBNkC57OlCcbTk5ohQAWk0TIJrId2TXIQ70LvPlIfgEsnkMdJ1NUswAAAABJRU5ErkJggg==" 
+              >
+            </div>
+              <img class="icon" 
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFUAAAA3CAMAAABKF/Y5AAADAFBMVEUAAAAMkjkMmTwMmDsMmjwNnD0NnD0Nnj4Mmz0Nmz0NnT0Nmz0Nmz0Nnj4NnD0NnD0Nmz0MmDsMnj0Nmz0MnD0Nnz4Nmz0NnT0Nmz0NnD0BAwENnT0NoD8BDQUAAAAAAQAMmz0OqkINmz0ABQAADwENoj8SKh0LGRMABAABXx8MnD0NnD0PtEcAQA8AAwAJjDQAAAAOskYAAAABAwIANQsGeCsAAAAPs0YAAgEOJBgFDgkACgAAGwEAAQAABAAAAAABUBoBTxkLlzoOrkQOrUQAAAAAFwQAJwoAHAkAAAAGdysCBgQDBgUAIQQAHgIANw0ALAsAAAAAKAcBSRYFcSgHgC8CWh4CUBoAEgQAEQQCKg0CSxkCWB4AAABZ9qN4+a9b9qR5+LBd9qR0+K5m96hw+Kxy+K1f9qZj96dY9qJt+Ktj/7Vs96p1+a5i96YBAQFb+qVq+Kpo/71i/7Jg/68XPSlf/6xo+Kl9/8Fn/7oTLh8QJxsNIBZs/7YnaEUIEw2D/8Fn/7Zn/7Jd/6pc/KgqX0MLGhNw/8B4/71h/7Bp96hIu35Cj2UsaEgWNiV//7xx/7xt/7l8/7Z5+7Jd96VT4ZZDr3VJq3VArHM6mmg/lmgzhVs7flkxgVc3e1Y1d1MgTDQcRy8dPi6G/8Rp/8Bw/7Zq+6xf+qtQwoVKxoQ9nms4il8velIzclAsdE0lZEIgWDp2/7ll/7dn/q5f+qdn8qdc8KNZ8aFd66BQ2JBTrXxCp3JJnHA8o2w4lGM3j2Ara0syaksmVDodSTEaQi0bOSsUMyKM/86C/8dj/7ds/7Nr/693961i/6xj+6lX6Z1OzopJv4FMoXMrWD94/8dt/8V2/8Ns/7x2/7Ny/7Nw/K5n+qpq6qdY7p1d4Jlm1JlezZFXzIxcwYpMyohEt3pEm209hFwkXT4lTjgeUTYHCglx/8x9/8hu+rBn25pa2Zdg0pJV0IxUsn8tY0gjUTeJ/8hz+a5h8aRd5aRT3JRAiGOF/+N+/9Bw9a5Pu4JNsHyWUQQvAAAAXnRSTlMAAwQJBgsVEg0pEBkcHzQyJyRIPzshOEMtD9UvF+u1r0c8Hs7LRv37xG9BPTiNflZRMi/wkVdKKfn397qrpZCEZ1xNQj8oak5GOzLq4aejhoB5dnFkRj4s2dmKQTcWVWfc3wAACFRJREFUWMPt1HVUU1EcwPEn7WgFFEQMFLHF7u7uFlQMngOGLFiP2ujuDuluQTokFQm7u7tb793b9lRU1OPxL79/bIfz2Gf33Pu7Q/73v6/aNl9vaW1MdKyBzpQZo0bL/BVTesSS9kMP/WxtvY5cenqziqmj9xfoRTrtlw68sPX12+Hna3vggK3JpUPhtzFa6o/RBRPbXhzYIcnEREgfwekuf4AuJF2t8wUarsIgbetl+hjQBjp6I36X3jDxap3JNyjMwsLC1MKXbkv3+nA5KDLaQKfPiPGjf1k1DK8zMfk+Ctuzx/S0F53ubC6h5/3KprK9fI8ABSM7mLDdsDPOdOfs/CtBUdUG+p3Thm0vIIp1xMTL9oCXn5ev6TfmPpC5+f7GbGfv+PwrxWnVk/T7rPoR3QXZwPPztZCofkcqK0suW4Q/rPPyAyZMYgJ0v6sNqMnH24fzqqU4I+aH9Pz2enAoIIha+PmVVLa380nVhy6fpp/e8/Jl9lmASkxXm10wM1Au5xTHvuAapA2nL/pWneZuawqzgIG3OtPw8Mqbkfyq2KqHp+nn089mm5/J/tqEWVruBR21Y9iRDyaHsfS+dMEIDnhK32OK97L+Jq/N3T09suSQ+/mgw7dJ7uezr6afTdjvGh9/bpcwaArRnTB/f1oOIzFEMP1LtcvGq3Rs/7DDOV13o6qkraSkillff+Zhm8ez6NrLUc/fOzfaPHnU5N1omdsISWhi6HZhtLhjd/S6iFEpRGrTVfru3XvEOT+uqoyqjIpyb4+im5+tj7rxOPTSRR471O1RPF8Q7RF0srDVntO8F0exjFFiTqaeRO2CDDjkvBuv/qbAPTIqMp3PT9r94ANfcP4i73xqTYmAVH48ght4N4xP9ShKam7Os7M/6g9RsWqMUhh3polVGWTaW7o5rjo/d6enV3qk33xGjbx/hfXo/gP3W6Sgd89DG72jPdw83NiBZnfY0QEF5deP2dnZkWn+mAlCyXvZCzFVRhpZfZu+T9LZM4evBLGfgsO6X+Xh/CAp+mLNk1RB8UXWK05uDYtdlhaSksa9zgwooDJrqWkpbsdyiNDE2LhgHZEqi6y/m3/G3Fykxj9m5d/wfPvUw/MkNcg7wTudl5nPCa24xXWyb6E63QrhpmRkZiTHJNLIB93K7/KotbURDlZi1pHoOUqkKkgbvr3vai4q+9PzpoQroZExH5uYT+K9T0aRgk56F95lvsr1cSNVUIO5KRUZYSm3wJQy7lFYRbTraeWOEhW1DukjUuWRWXcfxLvuF5Wfvz8h3vmkTSrVk5Pw0YCayit8X0wqdtrpE1bDpbpx3TK5pWllBTUVpY/Cqk9Yx1mTjfFcApaIVV2CIf94gquNMNeEpl2gBJvyrKTjbrysXO/UQD6rJsMpzymmteBOBI8Zwb2eGZgYccszhsRKK73mQEFx1cHBU6wqyS8ec+M4vDZ4Zud8OI3nLr45lctpFVS/LiAFOgWTaqnMiDBeeUZLdZELg3wikMTOpDKZwURctWrIwiZLmqCoTphFajveZIabsGYzy6P2lnvPPWnl2J8K472+FlLMTn0XkpUcw/WkWKE5Lixu1gVGQFlyojGeNVekKsgpq+mumRju45RraSbJUnIrj9rv3Zl3NPkC2YlBLasQvA6uuRNMBheUTT0RExHn0EBDv6PCLVDvqTxOn/WJ4+Rj32yJi0IUK8/ef3veheTSrIB71LQTFMqxCEFW4olSFsURmHhWxCzxNSDoKndVmaAxdikzPKkQyBz75i9J/LL7EylEimNgC4VcxvYMZtCsiMzMOCvI4qdVi4i3AC5WS2XC7BVTeg86zA9NKrQ75WPnkvc1ibn+4F7S0MTrgRSiFYoSi0ghDehXkzUGU8FiteX6q/XU6t7PqN/swcOXDwD0MyENfkDyACXJWBwKTOE7o5UUjM0rfgvEi5Ul6AJWRaN7jx5zh/UbOHLw8GUi+gLRmuhvLCY7hjYkwxHAbyxrgUgVsepdVbWA27dbt4FzcLo6o+ygI052ZF1oKP5HXKkOEMV7AFklTbWevVQADFaM0XO7jRy3nJSZ6Cg+YAoNHM2PQ4kFpIWIhJUCrLacopKmeteevVSBPLT7ECDPnm00TicixxHFSAYx4BjYEPKPaJTc4DkdE/FNUCAAVxnAmKw1dEiPCTPHpFoDFJI5AaGxkwfFeqRcO/hdGkVziNH6mIezMkIXwFBWA7SKqu7MiSHWVqiVC4P4pix28oCxawcPnwr2+js0akyJCzDQ00Y6sNDVJsgDGa5ZTVN2DSnY2gGQReWxkw3Hrh0ybA44xm4jAa3fmx1bkdICaReag4ODS4P1wTDSCOAgHVwIS2Q5ZCWp9Z41uSj1MCDHaRj169G3b99u4BjnCumxGF3acsHR0fhNIJ/XZyuCSOEq7opguBfayEpe4b2isMNjpqwYpzLBaGj37hoaGuB1CJgQjO47EtsQFkvQW3/6emBiaEdYIiOb2W43PMf0Wb1OTbOXloaWioqqai9VVXiMwBbSAwf2MzIaum7WzJmzFsshiKy0TBdc/d6SZaSQKYJJ0+YvlidoQqtXz65d1dTUwSmKJ0RDoztY95ChGqoTlHXBjslrS8uApf4kIUvYoo4g8prAAaC6pnJ/JSVFMCD94YRAGiwbBr9Qvb+ivEJnKDa/4FVeESDKmsrKwAOrgWETIqLFX6goh6Gdq/C2ycvpKoJ0gUjQVpCFwQkRDR+wQUpKwNSW7RSFgSMTTgIBrI4ARTAYMjBpEKDhE2DD5AkKuNn5YrGPK8hiIpgabECkgI3RWLLgaacoPgfQhaBYFD2AYTT+GDc7Z7FwEU9Ed3zcuSvp5/+B/Ks+A4O7iGi1wvxSAAAAAElFTkSuQmCC" 
+              />
+              <img class="sm-logo" 
+              src="./assests/images/logo.png" 
+              />
+              <img class="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAATCAMAAABSrFY3AAAAh1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9qkf8RAAAALHRSTlMAZhQEQDYiEGBdOy8J+O6ZTc5qU1AqJhrm4dTHwVoH57u1sKOPjYyDc1dKDE/hPsIAAADHSURBVBjTZVHnGoMwCMwwrrhqa9U6ujfv/3wF/Yw13h+OAw7yhUntsjVcRzDF+U5YupdxvsUKwon+9D4kKWNyiH5hCvvA9NIsTpeDLnbIZ393aoscIsF+tpZqsAx9CmG/POfDR2Ri/YTOMmKqnCy1o+XU5nssh/juWePRM4aWpQBQBYvCtkbtwNwNIBpt9OIEVFBI84RoOt70fcSYJK9xoUiBMo60q4heS+OgGxI273YI4WKrf4QRSS7tP7nFZp2N4lxf1Jz+AN4+EFrsN7+jAAAAAElFTkSuQmCC" />
+            </div>
+        </div>
+        <div class="swiper-slide">
+<div class="page-container">
+  <p class="text">美颜配贴纸<br>视频互动素颜也美</p>
+  <button id='download' style="box-shadow: rgb(213, 13, 85) 0px 15px 15px -10px;">下载微红包</button>
+  <div class="picture">
+    <img src="./assests/images/photo_.1075adc2.png" />
+    <img class="wave" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAHnCAMAAABg5OYCAAAAY1BMVEUAAACnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OnB0OKe8+9AAAAIXRSTlMABgobDhcTKSAzNyUuPVZHXEFvS1CVfGqQgmGfm4d1i2XDgjS8AAAEDUlEQVRo3tWa27baIBCGOYRAyMkYNdtso77/U/aiZaBr/1sWJdh2rrIQMwxz+kDZT+nUr4d20cxJd5Hu6cPSaK38I0sX7hQN7tsVY9K9c7w59ZIx4eYKw9kfS9tzt9zJL/1wdrbZz4lGZefmVk2Vqsho2peOk7XHh3vR/KndTNbQoszoPhfptlWStlX6LRo+3HBz62m0GZwieTCpioQgRcG+rHc33D9a8ttpFU7lUYJIyZLx6F6l7x2Nzhfn2W5rglX7p3RFg3CvXBVF6vPizJ/OPlIrMo+rDNu62alUJwkj1Xuzbsk0nWycpj1SVryMVPnN3FQJ19uKF7aBfUgS7IvQbx8+UseBO5VP7+MEAXGGYvLaROI3S3C+4dwUOSnBcC1Bdefcv6hRCeLrpAzq5HFDNdW0qP4mi2x8D6hfRCroLWmiJAP9bblWoBf2M+qbycIr1LuHDfX5/ukmm0UnK+L+MVC0CLeJF+N24ZtRht6QLv2KrPAWN4HFosogGzt+9ZDA3iTPFyebHkZ1Otm0lMwh2Wxkm+8XYcYWIJsHqDCFyWb7V8jGd5G85PBdT/9GNsJ3yL3JRo+QbCCnqhyyaTtINhsmG55BNni90LbCZCNek80qy5GNLks280oMjslmQ2TDqyyyEYhsHruTTRchm7BfhCfL9EjFp9uSZFPHyOb8JrI5Xal6PkKyqZ3Kv0E2fB+ysZ5snq23eFOA5UTtd4dnkM0pJBsBvKkMJUebYZyxFH29AjXV3iDZ2Do5JTzZaEg2N0Q2Zi5JNh8WkI1JJxsOi/fhSNXzSjFZlmymhfLtrjHZwEWnKzohssFn/1qRHrkP2cxRstG8HNmMN0Q2shdOZc6dDW+Fj9QI2ch0shEVKaoTyOaZQzYcks2dyOYSkM29ptFuHwafD0Q2S/TOptqHbE7koQGTjfU1ypBKI5LJxlL0TTGyaT3ZNLuQjegg2QSR2k7CqRx3Ixvxkmz0oHYhmyokG3TjPXmyOWq2iwxP6gx33y98F7FXSDZid7IZNoXubJQ/FGWQjTnVkUiVgGx4DtlUfex20RQgmyskmwntQ7JgX2CysQfy8dpmMHicbIL4LUk2R41zE+ZxDtkcqJaAE1UpsoGRCsmmq9LJBvUAfLuIe0uCgP4Wu7MBfTOTbFZPNr7PYybIIhseIRswWoZssMVgd/YkG+jN2gCmzSIb8LtpPtngzIpkoZ4oY8fkzMdVA5MNrkYs54Aau7OZloJkYyHZ9AXI5gDIBjB4Ptmgjg5rKiYbthfZrOB/NmBuimASw7bZN5HN+f1kg+P3bWTzsDCP/wuymd5ENgb2APyPsM6yPcimjpMN7psl72wwE2QJJpuuCNn45IRWcGAxSYRsIssRfY08ZL54E8gPP9xEGWQmH6oAAAAASUVORK5CYII=" ></div>
+        <img class="sm-logo" 
+        src="./assests/images/logo.png" 
+        />
+        </div> 
+    </div>
+    <script>
+      var mySwiper = new Swiper ('.swiper-container', {
+        direction : 'vertical',
+        mousewheel: true,
+      })      
+      document.getElementById('download').addEventListener('click', ()=>{
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+          window.location.href = 'https://testflight.apple.com/join/NDWtkVAB'
+        } else if (/(Android)/i.test(navigator.userAgent)) {
+          window.location.href = 'https://oss.tthb.im/download/app/app-whb-release.apk'
+        } else {
+          alert('请在手机端进行下载安装')
+        }
+      })
+    </script>
+  </body>
+</html>
